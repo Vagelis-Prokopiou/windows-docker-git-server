@@ -2,10 +2,16 @@ Virtualbox Network configuration:
 	Adapter 1:
 		Attached to: NAT
 		Port forward
-			Host IP: "Windows physical host IP"
-			Host Port: 2222
-			Guest IP: "Linux virtual host [$(docker-machine ip default)]" (Usually 192.168.99.100)
-			Guest Port: 2222 (Same as the (Windows host)
+			Rule 1:
+				Host IP: "Windows physical host IP"
+				Host Port: 2222
+				Guest IP: "Linux virtual host [$(docker-machine ip default)]" (Usually 192.168.99.100)
+				Guest Port: 2222 (Same as the (Windows host)
+			Rule 2 (this is used for in-Docker communication):
+				Host IP: 127.0.0.1
+				Host Port: 49591
+				Guest IP: Leave blank
+				Guest Port: 22
 	Adapter 2:
 		Attached to: Host-only Adapter
 		Name: VisrualBox Host-Only Ethernet Adapter #2
