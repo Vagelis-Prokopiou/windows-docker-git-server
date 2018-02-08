@@ -29,3 +29,5 @@ Repos:
 			git clone ssh://git@$(docker-machine ip default):2222/git-server/repos/<repo.git>
 		From the different host in the LAN:
 			git clone ssh://git@<Windows host IP>:2222/git-server/repos/<repo.git>
+
+If you get connectivity error make sure the .ssh/authorized_keys file in the container has proper line breaks.
